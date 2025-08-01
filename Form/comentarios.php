@@ -44,6 +44,26 @@
             color: #7f8c8d;
             font-size: 0.85em;
         }
+
+        .acoes {
+            margin-top: 10px;
+        }
+
+        .acoes a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        .btn-editar {
+            background-color: #28a745;
+        }
+
+        .btn-excluir {
+            background-color: #dc3545;
+        }
     </style>
 </head>
 
@@ -56,7 +76,7 @@
         <?php
         include 'conexao.php';
 
-        $sql = "SELECT nome, comentario, data_envio FROM comentarios ORDER BY data_envio DESC";
+        $sql = "SELECT id, nome, comentario, data_envio FROM comentarios ORDER BY data_envio DESC";
         $result = mysqli_query($con, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -65,6 +85,11 @@
                 echo "<h3>" . htmlspecialchars($row['nome']) . "</h3>";
                 echo "<p>" . nl2br(htmlspecialchars($row['comentario'])) . "</p>";
                 echo "<small>Enviado em: " . $row['data_envio'] . "</small>";
+                echo "<div class='acoes'>";
+                echo "<a href='editar_comentario.php?id=" . $row['id'] . "' class='btn-editar'>Editar</a>";
+                echo "<a href='excluir_comentario.php?id=" . $row['id'] . "' onclick='return confirm(\"Tem certeza que deseja excluir este comentário?\");' class='btn-excluir'>Excluir</a>";
+                echo "</div>";
+
                 echo "</div>";
             }
         } else {
