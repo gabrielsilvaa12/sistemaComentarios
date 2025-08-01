@@ -1,0 +1,80 @@
+body {
+    margin: 90px;
+    background-color: #f6f6f6;
+}
+
+.tudo {
+    position: relative ;
+    max-width: 320px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5%;
+    
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 300px;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+button {
+    position: absolute;
+    padding: 8px 16px;
+    cursor: pointer;
+    left:282px;
+}
+
+.comentario {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 10px 10px 15px;
+}
+
+.sucesso, .erro {
+    position: absolute;
+    margin: 5px 0 5px 0;
+    bottom: -5px;
+    left: 62px;
+    opacity: 1;
+}
+.sucesso {
+    color: green;
+}
+
+.erro {
+    color: red;
+}
+
+.voltar,
+.btn_comentario {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #808080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.voltar:hover,
+.btn_comentario:hover {
+    background-color: #606060;
+}
+
+.btn_comentario {
+    align-items: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 22px;
+}
+
